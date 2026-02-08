@@ -30,32 +30,14 @@ class KnowledgeGraph:
     def save(self, output_path: str):
         """
         Exports the graph to a JSON file.
-        Uses a try-except block to work on ANY NetworkX version.
+        Manual serialization to avoid NetworkX version-specific API changes.
         """
-        try:
-            # 1. Try the MODERN way (NetworkX 3.4+)
-            # We add '# type: ignore' to stop Pylance from complaining if it thinks we are on an old version.
-            data = nx.node_link_data(
-                self.graph,
-                source="source",
-                target="target",
-                name="id",
-                edges="links"  # type: ignore
-            )
-        except TypeError:
-            # 2. Fallback to the LEGACY way (NetworkX < 3.4)
-            # This runs if the user has an old version installed.
-            data = nx.node_link_data(
-                self.graph,
-                source="source",
-                target="target",
-                name="id"
-            )
+        data = self._to_node_link_data()
 
         with open(output_path, "w", encoding="utf-8") as f:
             json.dump(data, f, indent=2)
 
-        print(f"✅ Knowledge Graph saved to {output_path}")
+        print(f"OK: Knowledge Graph saved to {output_path}")
         print(f"   - Nodes: {self.graph.number_of_nodes()}")
         print(f"   - Edges: {self.graph.number_of_edges()}")
 
@@ -68,3 +50,34 @@ class KnowledgeGraph:
             15: "String", 16: "Number", 17: "Boolean", 18: "Array",
         }
         return mapping.get(kind, "Unknown")
+
+    def _to_node_link_data(self) -> dict:
+        graph = self.graph
+        data = {
+            "directed": graph.is_directed(),
+            "multigraph": graph.is_multigraph(),
+            "graph": dict(graph.graph),
+            "nodes": [],
+            "links": [],
+        }
+
+        for node_id, attrs in graph.nodes(data=True):
+            node_entry = {"id": node_id}
+            if attrs:
+                node_entry.update(attrs)
+            data["nodes"].append(node_entry)
+
+        if graph.is_multigraph():
+            for source, target, key, attrs in graph.edges(keys=True, data=True):
+                link_entry = {"source": source, "target": target, "key": key}
+                if attrs:
+                    link_entry.update(attrs)
+                data["links"].append(link_entry)
+        else:
+            for source, target, attrs in graph.edges(data=True):
+                link_entry = {"source": source, "target": target}
+                if attrs:
+                    link_entry.update(attrs)
+                data["links"].append(link_entry)
+
+        return data

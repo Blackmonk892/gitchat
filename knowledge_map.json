@@ -2,6 +2,89 @@
   "directed": true,
   "multigraph": false,
   "graph": {},
-  "nodes": [],
-  "links": []
+  "nodes": [
+    {
+      "id": "C:\\Users\\xoxo3\\Desktop\\Projects\\google_docs_clone\\backend\\index.js::findOrCreateDocument",
+      "label": "findOrCreateDocument",
+      "type": "Function",
+      "filepath": "C:\\Users\\xoxo3\\Desktop\\Projects\\google_docs_clone\\backend\\index.js"
+    },
+    {
+      "id": "C:\\Users\\xoxo3\\Desktop\\Projects\\google_docs_clone\\backend\\index.js",
+      "label": "index.js",
+      "type": "File"
+    },
+    {
+      "id": "C:\\Users\\xoxo3\\Desktop\\Projects\\google_docs_clone\\frontend\\src\\App.jsx::App",
+      "label": "App",
+      "type": "Function",
+      "filepath": "C:\\Users\\xoxo3\\Desktop\\Projects\\google_docs_clone\\frontend\\src\\App.jsx"
+    },
+    {
+      "id": "C:\\Users\\xoxo3\\Desktop\\Projects\\google_docs_clone\\frontend\\src\\App.jsx",
+      "label": "App.jsx",
+      "type": "File"
+    },
+    {
+      "id": "C:\\Users\\xoxo3\\Desktop\\Projects\\google_docs_clone\\frontend\\src\\texteditor.jsx::TextEditor",
+      "label": "TextEditor",
+      "type": "Function",
+      "filepath": "C:\\Users\\xoxo3\\Desktop\\Projects\\google_docs_clone\\frontend\\src\\texteditor.jsx"
+    },
+    {
+      "id": "C:\\Users\\xoxo3\\Desktop\\Projects\\google_docs_clone\\frontend\\src\\texteditor.jsx",
+      "label": "texteditor.jsx",
+      "type": "File"
+    },
+    {
+      "id": "C:\\Users\\xoxo3\\Desktop\\Projects\\google_docs_clone\\frontend\\src\\texteditor.jsx::interval",
+      "label": "interval",
+      "type": "Function",
+      "filepath": "C:\\Users\\xoxo3\\Desktop\\Projects\\google_docs_clone\\frontend\\src\\texteditor.jsx"
+    },
+    {
+      "id": "C:\\Users\\xoxo3\\Desktop\\Projects\\google_docs_clone\\frontend\\src\\texteditor.jsx::handler",
+      "label": "handler",
+      "type": "Function",
+      "filepath": "C:\\Users\\xoxo3\\Desktop\\Projects\\google_docs_clone\\frontend\\src\\texteditor.jsx"
+    },
+    {
+      "id": "C:\\Users\\xoxo3\\Desktop\\Projects\\google_docs_clone\\frontend\\src\\texteditor.jsx::wrapperRef",
+      "label": "wrapperRef",
+      "type": "Function",
+      "filepath": "C:\\Users\\xoxo3\\Desktop\\Projects\\google_docs_clone\\frontend\\src\\texteditor.jsx"
+    }
+  ],
+  "links": [
+    {
+      "source": "C:\\Users\\xoxo3\\Desktop\\Projects\\google_docs_clone\\backend\\index.js",
+      "target": "C:\\Users\\xoxo3\\Desktop\\Projects\\google_docs_clone\\backend\\index.js::findOrCreateDocument",
+      "relation": "defines"
+    },
+    {
+      "source": "C:\\Users\\xoxo3\\Desktop\\Projects\\google_docs_clone\\frontend\\src\\App.jsx",
+      "target": "C:\\Users\\xoxo3\\Desktop\\Projects\\google_docs_clone\\frontend\\src\\App.jsx::App",
+      "relation": "defines"
+    },
+    {
+      "source": "C:\\Users\\xoxo3\\Desktop\\Projects\\google_docs_clone\\frontend\\src\\texteditor.jsx",
+      "target": "C:\\Users\\xoxo3\\Desktop\\Projects\\google_docs_clone\\frontend\\src\\texteditor.jsx::TextEditor",
+      "relation": "defines"
+    },
+    {
+      "source": "C:\\Users\\xoxo3\\Desktop\\Projects\\google_docs_clone\\frontend\\src\\texteditor.jsx",
+      "target": "C:\\Users\\xoxo3\\Desktop\\Projects\\google_docs_clone\\frontend\\src\\texteditor.jsx::interval",
+      "relation": "defines"
+    },
+    {
+      "source": "C:\\Users\\xoxo3\\Desktop\\Projects\\google_docs_clone\\frontend\\src\\texteditor.jsx",
+      "target": "C:\\Users\\xoxo3\\Desktop\\Projects\\google_docs_clone\\frontend\\src\\texteditor.jsx::handler",
+      "relation": "defines"
+    },
+    {
+      "source": "C:\\Users\\xoxo3\\Desktop\\Projects\\google_docs_clone\\frontend\\src\\texteditor.jsx",
+      "target": "C:\\Users\\xoxo3\\Desktop\\Projects\\google_docs_clone\\frontend\\src\\texteditor.jsx::wrapperRef",
+      "relation": "defines"
+    }
+  ]
 }

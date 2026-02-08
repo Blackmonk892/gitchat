@@ -25,7 +25,7 @@ class StateManager:
         hash_md5 = hashlib.md5()
         try:
             with open(file_path, "rb") as f:
-                for chunk in iter(lambda: f.reaf(4096), b""):
+                for chunk in iter(lambda: f.read(4096), b""):
                     hash_md5.update(chunk)
             return hash_md5.hexdigest()
         except FileNotFoundError:
